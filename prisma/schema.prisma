@@ -12,5 +12,4 @@ model Task {
   description String?
   done        Boolean  @default(false)
   createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
 }
