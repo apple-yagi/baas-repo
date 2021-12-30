@@ -4,6 +4,7 @@ specifiers:
   '@supabase/supabase-js': ^1.29.1
   '@types/node': 17.0.5
   '@types/react': 17.0.38
+  dotenv-cli: ^4.1.1
   eslint: 8.5.0
   eslint-config-next: 12.0.7
   eslint-config-prettier: ^8.3.0
@@ -13,6 +14,7 @@ specifiers:
   eslint-plugin-react-hooks: ^4.3.0
   next: 12.0.7
   prettier: ^2.5.1
+  prisma: ^3.7.0
   react: 17.0.2
   react-dom: 17.0.2
   typescript: 4.5.4
@@ -26,6 +28,7 @@ dependencies:
 devDependencies:
   '@types/node': 17.0.5
   '@types/react': 17.0.38
+  dotenv-cli: 4.1.1
   eslint: 8.5.0
   eslint-config-next: 12.0.7_151adb91c2dbffa9bf336078aa7406b9
   eslint-config-prettier: 8.3.0_eslint@8.5.0
@@ -34,6 +37,7 @@ devDependencies:
   eslint-plugin-react: 7.28.0_eslint@8.5.0
   eslint-plugin-react-hooks: 4.3.0_eslint@8.5.0
   prettier: 2.5.1
+  prisma: 3.7.0
   typescript: 4.5.4
 
 packages:
@@ -324,6 +328,11 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
+    dev: true
+
+  /@prisma/engines/3.7.0-31.8746e055198f517658c08a0c426c7eec87f5a85f:
+    resolution: {integrity: sha512-W549ub5NlgexNhR8EFstA/UwAWq3Zq0w9aNkraqsozVCt2CsX+lK4TK7IW5OZVSnxHwRjrgEAt3r9yPy8nZQRg==}
+    requiresBuild: true
     dev: true
 
   /@rushstack/eslint-patch/1.1.0:
@@ -1035,6 +1044,25 @@ packages:
     resolution: {integrity: sha512-fRA+BaAWOR/yr/t7T9E9GJztHPeFjj8U35ajyAjCDtAAnTn1Rc1f6W6VGPJrO1tkQv9zWu+JRof7z6oQtiYVFQ==}
     engines: {node: '>=10'}
     dev: false
+
+  /dotenv-cli/4.1.1:
+    resolution: {integrity: sha512-XvKv1pa+UBrsr3CtLGBsR6NdsoS7znqaHUf4Knj0eZO+gOI/hjj9KgWDP+KjpfEbj6wAba1UpbhaP9VezNkWhg==}
+    hasBin: true
+    dependencies:
+      cross-spawn: 7.0.3
+      dotenv: 8.6.0
+      dotenv-expand: 5.1.0
+      minimist: 1.2.5
+    dev: true
+
+  /dotenv-expand/5.1.0:
+    resolution: {integrity: sha512-YXQl1DSa4/PQyRfgrv6aoNjhasp/p4qs9FjJ4q4cQk+8m4r6k4ZSiEyytKG8f8W9gi8WsQtIObNmKd+tMzNTmA==}
+    dev: true
+
+  /dotenv/8.6.0:
+    resolution: {integrity: sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==}
+    engines: {node: '>=10'}
+    dev: true
 
   /electron-to-chromium/1.4.29:
     resolution: {integrity: sha512-N2Jbwxo5Rum8G2YXeUxycs1sv4Qme/ry71HG73bv8BvZl+I/4JtRgK/En+ST/Wh/yF1fqvVCY4jZBgMxnhjtBA==}
@@ -2428,6 +2456,15 @@ packages:
     resolution: {integrity: sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==}
     engines: {node: '>=10.13.0'}
     hasBin: true
+    dev: true
+
+  /prisma/3.7.0:
+    resolution: {integrity: sha512-pzgc95msPLcCHqOli7Hnabu/GRfSGSUWl5s2P6N13T/rgMB+NNeKbxCmzQiZT2yLOeLEPivV6YrW1oeQIwJxcg==}
+    engines: {node: '>=12.6'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      '@prisma/engines': 3.7.0-31.8746e055198f517658c08a0c426c7eec87f5a85f
     dev: true
 
   /process/0.11.10:
