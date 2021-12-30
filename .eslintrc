@@ -5,5 +5,8 @@
 		"xo-react",
 		"plugin:react/jsx-runtime",
 		"prettier"
-	]
+	],
+	"rules": {
+		"react/prop-types": "off"
+	}
 }
