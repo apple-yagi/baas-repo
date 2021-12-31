@@ -1,7 +1,7 @@
 ## Backend as a Service
 
 - Supabase
-- Firebase(Feature)
+- Firebase
 
 ## Dependencies
 
