@@ -15,6 +15,6 @@ export class TaskRepositoryImpl implements TaskRepository {
 		if (error) throw error;
 		if (!data) throw new Error('return data is null');
 
-		return data[0];
+		return data[0].id;
 	}
 }
