@@ -6,9 +6,9 @@ import {
 	RepositoryContext,
 	taskRepository,
 } from '../contexts/RepositoryContext';
-import { v4 as uuidv4 } from 'uuid';
 import styles from '../styles/Home.module.css';
 import { TaskForm, TaskInput } from '../components/TaskForm';
+import { generateUuid } from '../utils/generateUuid';
 
 type Props = InferGetServerSidePropsType<typeof getServerSideProps>;
 
@@ -17,7 +17,7 @@ const Home: NextPage<Props> = ({ tasks }) => {
 
 	const onSubmit = (taskInput: TaskInput) => {
 		taskRepository.storeTask({
-			id: uuidv4(),
+			id: generateUuid(),
 			...taskInput,
 		});
 	};
