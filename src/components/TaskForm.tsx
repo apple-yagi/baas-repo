@@ -1,6 +1,7 @@
 import {
 	Button,
 	FormControl,
+	FormErrorMessage,
 	FormHelperText,
 	FormLabel,
 	Input,
@@ -19,24 +20,36 @@ interface Props {
 }
 
 export const TaskForm = ({ submit }: Props) => {
-	const { register, handleSubmit } = useForm<TaskInput>();
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm<TaskInput>();
 	const onSubmit: SubmitHandler<TaskInput> = (data) => submit(data);
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<VStack spacing={4} align="stretch">
-				<FormControl>
+				<FormControl isInvalid={Boolean(errors.title)}>
 					<FormLabel id="title-label" htmlFor="title">
 						Title
 					</FormLabel>
 					<Input
 						id="title"
-						{...register('title')}
-						aria-describedby="title-helpertext"
+						{...register('title', {
+							required: true,
+							minLength: 4,
+							maxLength: 50,
+						})}
 					/>
-					<FormHelperText id="title-helpertext">
-						Title is required.
-					</FormHelperText>
+					{errors.title &&
+						(errors.title.type === 'required' ? (
+							<FormErrorMessage>必須項目です</FormErrorMessage>
+						) : errors.title.type === 'minLength' ? (
+							<FormErrorMessage>4文字以上入力してください</FormErrorMessage>
+						) : (
+							<FormErrorMessage>50文字以内で入力してください</FormErrorMessage>
+						))}
 				</FormControl>
 				<FormControl>
 					<FormLabel id="description-label" htmlFor="description">
