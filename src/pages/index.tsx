@@ -9,6 +9,8 @@ import {
 import styles from '../styles/Home.module.css';
 import { TaskForm, TaskInput } from '../components/TaskForm';
 import { generateUuid } from '../utils/generateUuid';
+import { TaskList } from '../components/TaskList';
+import { VStack } from '@chakra-ui/react';
 
 type Props = InferGetServerSidePropsType<typeof getServerSideProps>;
 
@@ -40,13 +42,10 @@ const Home: NextPage<Props> = ({ tasks }) => {
 					<code className={styles.code}>pages/index.tsx</code>
 				</p>
 
-				<TaskForm submit={onSubmit} />
-
-				<ul>
-					{tasks.map((task) => (
-						<li key={task.id}>{task.title}</li>
-					))}
-				</ul>
+				<VStack spacing={3} align="stretch">
+					<TaskForm submit={onSubmit} />
+					<TaskList tasks={tasks} />
+				</VStack>
 			</main>
 
 			<footer className={styles.footer}>
